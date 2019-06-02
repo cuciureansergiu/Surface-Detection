@@ -5,9 +5,11 @@ proj_dir=~/$(proj_name)/proj
 devicetree=system-top.dts
 bd_name=System
 
-all: compile bitstream save sdk-hw device-tree
+all: init compile bitstream save sdk-hw device-tree
 	@clear
 	@echo -e '\e[32mDone' '\e[39m'
+init:
+	source /tools/Xilinx/Vivado/2018.3/settings64.sh
 compile:
 	@echo -e '\e[32mCompiling project :' '\e[39m' $(proj_name) 
 	@$(vivado) -mode batch -nojournal -nolog -notrace -source project.tcl
@@ -20,9 +22,12 @@ clean:
 bitstream:
 	@echo -e '\e[32mGenerating bitstream''\e[39m'
 	$(vivado) $(proj_dir)/$(proj_name).xpr -mode batch -nojournal -nolog -notrace -source bitstream.tcl
-open-gui:
+open-vivado:
 	@echo -e '\e[31mOpening project :' '\e[39m' $(proj_name) '\e[39m'
 	@$(vivado) $(proj_dir)/$(proj_name).xpr
+open-sdk:
+	@echo -e '\e[31mOpening project :' '\e[39m' $(proj_name) '\e[39m'
+	@xsdk -workspace ~/$(proj_name)/sdk/
 save:
 	@cp $(proj_dir)/$(proj_name).srcs/sources_1/bd/$(bd_name)/hw_handoff/$(bd_name)_bd.tcl ~/$(proj_name)/src/bd/$(bd_name).tcl
 	@cp $(proj_dir)/$(proj_name).runs/impl_1/$(bd_name)_wrapper.sysdef ~/$(proj_name)/bin/$(bd_name).hdf 
