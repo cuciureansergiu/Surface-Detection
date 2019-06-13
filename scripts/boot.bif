@@ -3,5 +3,5 @@ image : {
       	../bin/System.bit
   	  	../u-boot/u-boot.elf
     	[load=0x2a00000]../boot/devicetree.dtb
-        [load=0x3000000]../boot/uImage.bin
+        [load=0x3000000]../boot/uImage
 }
