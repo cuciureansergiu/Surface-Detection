@@ -1,0 +1,12 @@
+/ {
+	dma_proxy@0 {
+			compatible = "xlnx,dma_proxy";
+		        dmas = <&axi_dma_0 0 &axi_dma_0 1>;
+		        dma-names = "dma0", "dma1";
+			};
+	axidma_chrdev: axidma_chrdev@0 {
+        	    	compatible = "xlnx,axidma-chrdev";
+	            	dmas = <&axi_dma_0 0 &axi_dma_0 1>;
+	            	dma-names = "tx_channel", "rx_channel";
+		    	};
+};
