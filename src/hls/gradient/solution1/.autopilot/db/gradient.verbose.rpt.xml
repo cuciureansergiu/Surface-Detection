@@ -1,0 +1,168 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'gradient'" level="0">
+<item name = "Date">Sun Jun 23 05:06:45 2019
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">gradient</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 8.510, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">20481, 20481, 20481, 20481, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">20480, 20480, 5, -, -, 4096, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="DSP">-, 2, -, -, -</column>
+<column name="Expression">-, 2, 0, 147, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">0, -, 74, 104, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 56, -</column>
+<column name="Register">-, -, 149, -, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 1, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="gradient_CRTL_BUS_s_axi_U">gradient_CRTL_BUS_s_axi, 0, 0, 74, 104, 0</column>
+</table>
+</item>
+<item name = "DSP48E"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+<column name="gradient_mul_mul_8ns_16ns_24_1_1_U1">gradient_mul_mul_8ns_16ns_24_1_1, i0 * i1</column>
+<column name="gradient_mul_mul_8ns_24ns_32_1_1_U2">gradient_mul_mul_8ns_24ns_32_1_1, i0 * i1</column>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="mul_ln23_3_fu_214_p2">*, 2, 0, 20, 8, 32</column>
+<column name="mul_ln23_fu_226_p2">*, 0, 0, 41, 8, 8</column>
+<column name="idx_fu_124_p2">+, 0, 0, 17, 13, 1</column>
+<column name="icmp_ln20_fu_118_p2">icmp, 0, 0, 13, 13, 14</column>
+<column name="or_ln23_1_fu_302_p2">or, 0, 0, 32, 32, 32</column>
+<column name="or_ln23_fu_280_p2">or, 0, 0, 24, 24, 24</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">38, 7, 1, 7</column>
+<column name="idx_0_reg_107">9, 2, 13, 26</column>
+<column name="output_f_WEN_A">9, 2, 4, 8</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">6, 0, 6, 0</column>
+<column name="idx_0_reg_107">13, 0, 13, 0</column>
+<column name="idx_reg_326">13, 0, 13, 0</column>
+<column name="lshr_ln23_2_reg_381">8, 0, 8, 0</column>
+<column name="mul_ln23_3_reg_386">8, 0, 32, 24</column>
+<column name="or_ln23_1_reg_391">32, 0, 32, 0</column>
+<column name="tmp_3_reg_356">8, 0, 8, 0</column>
+<column name="tmp_4_reg_366">8, 0, 8, 0</column>
+<column name="tmp_5_reg_376">8, 0, 8, 0</column>
+<column name="trunc_ln23_1_reg_351">8, 0, 8, 0</column>
+<column name="trunc_ln23_6_reg_361">8, 0, 8, 0</column>
+<column name="trunc_ln23_7_reg_371">8, 0, 8, 0</column>
+<column name="trunc_ln23_reg_346">8, 0, 8, 0</column>
+<column name="zext_ln23_reg_331">13, 0, 64, 51</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="s_axi_CRTL_BUS_AWVALID">in, 1, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_AWREADY">out, 1, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_AWADDR">in, 5, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_WVALID">in, 1, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_WREADY">out, 1, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_WDATA">in, 32, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_WSTRB">in, 4, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_ARVALID">in, 1, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_ARREADY">out, 1, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_ARADDR">in, 5, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_RVALID">out, 1, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_RREADY">in, 1, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_RDATA">out, 32, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_RRESP">out, 2, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_BVALID">out, 1, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_BREADY">in, 1, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_BRESP">out, 2, s_axi, CRTL_BUS, scalar</column>
+<column name="ap_clk">in, 1, ap_ctrl_hs, gradient, return value</column>
+<column name="ap_rst_n">in, 1, ap_ctrl_hs, gradient, return value</column>
+<column name="interrupt">out, 1, ap_ctrl_hs, gradient, return value</column>
+<column name="input_f_Addr_A">out, 32, bram, input_f, array</column>
+<column name="input_f_EN_A">out, 1, bram, input_f, array</column>
+<column name="input_f_WEN_A">out, 4, bram, input_f, array</column>
+<column name="input_f_Din_A">out, 32, bram, input_f, array</column>
+<column name="input_f_Dout_A">in, 32, bram, input_f, array</column>
+<column name="input_f_Clk_A">out, 1, bram, input_f, array</column>
+<column name="input_f_Rst_A">out, 1, bram, input_f, array</column>
+<column name="kernel_Addr_A">out, 32, bram, kernel, array</column>
+<column name="kernel_EN_A">out, 1, bram, kernel, array</column>
+<column name="kernel_WEN_A">out, 4, bram, kernel, array</column>
+<column name="kernel_Din_A">out, 32, bram, kernel, array</column>
+<column name="kernel_Dout_A">in, 32, bram, kernel, array</column>
+<column name="kernel_Clk_A">out, 1, bram, kernel, array</column>
+<column name="kernel_Rst_A">out, 1, bram, kernel, array</column>
+<column name="output_f_Addr_A">out, 32, bram, output_f, array</column>
+<column name="output_f_EN_A">out, 1, bram, output_f, array</column>
+<column name="output_f_WEN_A">out, 4, bram, output_f, array</column>
+<column name="output_f_Din_A">out, 32, bram, output_f, array</column>
+<column name="output_f_Dout_A">in, 32, bram, output_f, array</column>
+<column name="output_f_Clk_A">out, 1, bram, output_f, array</column>
+<column name="output_f_Rst_A">out, 1, bram, output_f, array</column>
+</table>
+</item>
+</section>
+</profile>

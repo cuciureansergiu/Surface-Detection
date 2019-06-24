@@ -1,0 +1,193 @@
+
+
+================================================================
+== Vivado HLS Report for 'gradient'
+================================================================
+* Date:           Sun Jun 23 05:06:45 2019
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        gradient
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.510|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+-------+-------+-------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    |  min  |  max  |  min  |  max  |   Type  |
+    +-------+-------+-------+-------+---------+
+    |  20481|  20481|  20481|  20481|   none  |
+    +-------+-------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-------+-------+----------+-----------+-----------+------+----------+
+        |          |    Latency    | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|  min  |  max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-------+-------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  20480|  20480|         5|          -|          -|  4096|    no    |
+        +----------+-------+-------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      2|       -|      -|    -|
+|Expression       |        -|      2|       0|    147|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        0|      -|      74|    104|    -|
+|Memory           |        -|      -|       -|      -|    -|
+|Multiplexer      |        -|      -|       -|     56|    -|
+|Register         |        -|      -|     149|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        0|      4|     223|    307|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        0|      1|   ~0   |   ~0  |    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +---------------------------+-------------------------+---------+-------+----+-----+-----+
+    |          Instance         |          Module         | BRAM_18K| DSP48E| FF | LUT | URAM|
+    +---------------------------+-------------------------+---------+-------+----+-----+-----+
+    |gradient_CRTL_BUS_s_axi_U  |gradient_CRTL_BUS_s_axi  |        0|      0|  74|  104|    0|
+    +---------------------------+-------------------------+---------+-------+----+-----+-----+
+    |Total                      |                         |        0|      0|  74|  104|    0|
+    +---------------------------+-------------------------+---------+-------+----+-----+-----+
+
+    * DSP48E: 
+    +-------------------------------------+----------------------------------+-----------+
+    |               Instance              |              Module              | Expression|
+    +-------------------------------------+----------------------------------+-----------+
+    |gradient_mul_mul_8ns_16ns_24_1_1_U1  |gradient_mul_mul_8ns_16ns_24_1_1  |  i0 * i1  |
+    |gradient_mul_mul_8ns_24ns_32_1_1_U2  |gradient_mul_mul_8ns_24ns_32_1_1  |  i0 * i1  |
+    +-------------------------------------+----------------------------------+-----------+
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------+----------+-------+---+----+------------+------------+
+    |     Variable Name    | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------+----------+-------+---+----+------------+------------+
+    |mul_ln23_3_fu_214_p2  |     *    |      2|  0|  20|           8|          32|
+    |mul_ln23_fu_226_p2    |     *    |      0|  0|  41|           8|           8|
+    |idx_fu_124_p2         |     +    |      0|  0|  17|          13|           1|
+    |icmp_ln20_fu_118_p2   |   icmp   |      0|  0|  13|          13|          14|
+    |or_ln23_1_fu_302_p2   |    or    |      0|  0|  32|          32|          32|
+    |or_ln23_fu_280_p2     |    or    |      0|  0|  24|          24|          24|
+    +----------------------+----------+-------+---+----+------------+------------+
+    |Total                 |          |      2|  0| 147|          98|         111|
+    +----------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------+----+-----------+-----+-----------+
+    |      Name      | LUT| Input Size| Bits| Total Bits|
+    +----------------+----+-----------+-----+-----------+
+    |ap_NS_fsm       |  38|          7|    1|          7|
+    |idx_0_reg_107   |   9|          2|   13|         26|
+    |output_f_WEN_A  |   9|          2|    4|          8|
+    +----------------+----+-----------+-----+-----------+
+    |Total           |  56|         11|   18|         41|
+    +----------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------+----+----+-----+-----------+
+    |         Name         | FF | LUT| Bits| Const Bits|
+    +----------------------+----+----+-----+-----------+
+    |ap_CS_fsm             |   6|   0|    6|          0|
+    |idx_0_reg_107         |  13|   0|   13|          0|
+    |idx_reg_326           |  13|   0|   13|          0|
+    |lshr_ln23_2_reg_381   |   8|   0|    8|          0|
+    |mul_ln23_3_reg_386    |   8|   0|   32|         24|
+    |or_ln23_1_reg_391     |  32|   0|   32|          0|
+    |tmp_3_reg_356         |   8|   0|    8|          0|
+    |tmp_4_reg_366         |   8|   0|    8|          0|
+    |tmp_5_reg_376         |   8|   0|    8|          0|
+    |trunc_ln23_1_reg_351  |   8|   0|    8|          0|
+    |trunc_ln23_6_reg_361  |   8|   0|    8|          0|
+    |trunc_ln23_7_reg_371  |   8|   0|    8|          0|
+    |trunc_ln23_reg_346    |   8|   0|    8|          0|
+    |zext_ln23_reg_331     |  13|   0|   64|         51|
+    +----------------------+----+----+-----+-----------+
+    |Total                 | 149|   0|  224|         75|
+    +----------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+--------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  | Source Object|    C Type    |
++------------------------+-----+-----+------------+--------------+--------------+
+|s_axi_CRTL_BUS_AWVALID  |  in |    1|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_AWREADY  | out |    1|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_AWADDR   |  in |    5|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_WVALID   |  in |    1|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_WREADY   | out |    1|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_WDATA    |  in |   32|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_WSTRB    |  in |    4|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_ARVALID  |  in |    1|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_ARREADY  | out |    1|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_ARADDR   |  in |    5|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_RVALID   | out |    1|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_RREADY   |  in |    1|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_RDATA    | out |   32|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_RRESP    | out |    2|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_BVALID   | out |    1|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_BREADY   |  in |    1|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_BRESP    | out |    2|    s_axi   |   CRTL_BUS   |    scalar    |
+|ap_clk                  |  in |    1| ap_ctrl_hs |   gradient   | return value |
+|ap_rst_n                |  in |    1| ap_ctrl_hs |   gradient   | return value |
+|interrupt               | out |    1| ap_ctrl_hs |   gradient   | return value |
+|input_f_Addr_A          | out |   32|    bram    |    input_f   |     array    |
+|input_f_EN_A            | out |    1|    bram    |    input_f   |     array    |
+|input_f_WEN_A           | out |    4|    bram    |    input_f   |     array    |
+|input_f_Din_A           | out |   32|    bram    |    input_f   |     array    |
+|input_f_Dout_A          |  in |   32|    bram    |    input_f   |     array    |
+|input_f_Clk_A           | out |    1|    bram    |    input_f   |     array    |
+|input_f_Rst_A           | out |    1|    bram    |    input_f   |     array    |
+|kernel_Addr_A           | out |   32|    bram    |    kernel    |     array    |
+|kernel_EN_A             | out |    1|    bram    |    kernel    |     array    |
+|kernel_WEN_A            | out |    4|    bram    |    kernel    |     array    |
+|kernel_Din_A            | out |   32|    bram    |    kernel    |     array    |
+|kernel_Dout_A           |  in |   32|    bram    |    kernel    |     array    |
+|kernel_Clk_A            | out |    1|    bram    |    kernel    |     array    |
+|kernel_Rst_A            | out |    1|    bram    |    kernel    |     array    |
+|output_f_Addr_A         | out |   32|    bram    |   output_f   |     array    |
+|output_f_EN_A           | out |    1|    bram    |   output_f   |     array    |
+|output_f_WEN_A          | out |    4|    bram    |   output_f   |     array    |
+|output_f_Din_A          | out |   32|    bram    |   output_f   |     array    |
+|output_f_Dout_A         |  in |   32|    bram    |   output_f   |     array    |
+|output_f_Clk_A          | out |    1|    bram    |   output_f   |     array    |
+|output_f_Rst_A          | out |    1|    bram    |   output_f   |     array    |
++------------------------+-----+-----+------------+--------------+--------------+
+

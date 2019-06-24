@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="gradient" xd:componentRef="gradient" xd:initiationInterval="20482" xd:clockPeriod="10.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_CRTL_BUS" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="input_f[]" xd:originalName="input_f" xd:direction="in" xd:interfaceRef="input_f_PORTA" xd:busTypeRef="bram" xd:arraySize="4096" xd:dataWidth="32"/>
+  <xd:arg xd:name="kernel[]" xd:originalName="kernel" xd:direction="in" xd:interfaceRef="kernel_PORTA" xd:busTypeRef="bram" xd:arraySize="4096" xd:dataWidth="32"/>
+  <xd:arg xd:name="output_f[]" xd:originalName="output_f" xd:direction="out" xd:interfaceRef="output_f_PORTA" xd:busTypeRef="bram" xd:arraySize="4096" xd:dataWidth="32"/>
+  <xd:arg xd:name="status" xd:originalName="status" xd:direction="in" xd:interfaceRef="s_axi_CRTL_BUS" xd:busTypeRef="axilite" xd:offset="0x10" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:latencyEstimates xd:best-case="20481" xd:worst-case="20481" xd:average-case="20481"/>
+  <xd:resourceEstimates xd:LUT="307" xd:FF="223" xd:BRAM="0" xd:DSP="4"/>
+</xd:acceleratorMap>

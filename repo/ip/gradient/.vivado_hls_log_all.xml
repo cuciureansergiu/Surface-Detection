@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'gradient/kernel_Din_A' to 0." projectName="gradient" solutionName="solution1" date="2019-06-23T05:06:45.505+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'gradient/kernel_WEN_A' to 0." projectName="gradient" solutionName="solution1" date="2019-06-23T05:06:45.499+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'gradient/input_f_Din_A' to 0." projectName="gradient" solutionName="solution1" date="2019-06-23T05:06:45.494+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'gradient/input_f_WEN_A' to 0." projectName="gradient" solutionName="solution1" date="2019-06-23T05:06:45.486+0300" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
