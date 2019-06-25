@@ -15,7 +15,7 @@
 #define TEST_SIZE		10
 
 #define FRAME_WIDTH		256/4	// The actual resolution is 256x256 but
-#define FRAME_HEIGHT 		256/4	// the data is read 4 bytes at a time
+#define FRAME_HEIGHT		256/4	// the data is read 4 bytes at a time
 #define FRAME_SIZE		FRAME_HEIGHT * FRAME_WIDTH
 
 #define STATUS_OK				0
@@ -31,9 +31,9 @@
 #define BRAM_SIZE 	sizeof(uint8_t) * 1024 * 64 //64KB BRAM block
 
 const off_t bram_ch[] =  {0x40000000u, 
-                       	  0x42000000u, 
-                       	  0x44000000u};
-const off_t device = 	  0x43C00000u;
+			  0x42000000u, 
+			  0x44000000u};
+const off_t device =	  0x43C00000u;
 const off_t addr_range =  0x00010000u;
 
 static const char * status_codes[] = {
